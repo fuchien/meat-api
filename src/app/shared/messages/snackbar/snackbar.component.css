@@ -1,0 +1,18 @@
+.snack {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    background-color: #ecf0f5;
+}
+
+.snack1 {
+    width: 30%;
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    border-radius: 2px;
+    padding: 15px;
+    position: fixed;
+    bottom: -4vh;
+    z-index: 1;
+}
