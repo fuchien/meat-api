@@ -5,12 +5,14 @@ import 'rxjs/add/operator/map'
 import 'rxjs/add/operator/catch'
 
 import { ErrorHandler } from './../app.error-handler';
-import { MEAT_API } from './../app.api';
+// import { MEAT_API } from './../app.api';
 import { MenuItem } from './../restaurant-detail/menu-item/menu-item.model';
 import { Restaurant } from './restaurant/restaurant.model';
+const MEAT_API: string = `https://meatapi.herokuapp.com`
 
 @Injectable()
 export class RestaurantsService {
+
 
     constructor(
         private _http: Http

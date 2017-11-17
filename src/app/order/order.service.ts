@@ -6,7 +6,8 @@ import 'rxjs/add/operator/map'
 import { CartItem } from './../restaurant-detail/shopping-cart/cart-item.model';
 import { Order } from 'app/order/order.model';
 import { ShoppingCartService } from './../restaurant-detail/shopping-cart/shopping-cart.service';
-import { MEAT_API } from './../app.api';
+// import { MEAT_API } from './../app.api';
+const MEAT_API: string = `https://meatapi.herokuapp.com`
 
 @Injectable()
 export class OrderService {
