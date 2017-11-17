@@ -18,9 +18,9 @@ export class RestaurantsService {
 
     }
 
-    restaurants(): Observable<Restaurant[]> {
+    restaurants(search?: string): Observable<Restaurant[]> {
         
-        return this._http.get(`${MEAT_API}/restaurants`)
+        return this._http.get(`${MEAT_API}/restaurants`, {params: {q: search}})
             .map(res => res.json())
             .catch(ErrorHandler.handleError)
     }
