@@ -8,7 +8,6 @@ import { ErrorHandler } from './../app.error-handler';
 // import { MEAT_API } from './../app.api';
 import { MenuItem } from './../restaurant-detail/menu-item/menu-item.model';
 import { Restaurant } from './restaurant/restaurant.model';
-const MEAT_API: string = `https://meatapi.herokuapp.com`
 
 @Injectable()
 export class RestaurantsService {
@@ -22,28 +21,28 @@ export class RestaurantsService {
 
     restaurants(search?: string): Observable<Restaurant[]> {
         
-        return this._http.get(`${MEAT_API}/restaurants`, {params: {q: search}})
+        return this._http.get(`https://meatapi.herokuapp.com/restaurants`, {params: {q: search}})
             .map(res => res.json())
             .catch(ErrorHandler.handleError)
     }
 
     restaurantById(id: string): Observable<Restaurant> {
 
-        return this._http.get(`${MEAT_API}/restaurants/${id}`)
+        return this._http.get(`https://meatapi.herokuapp.com/restaurants/${id}`)
             .map(res => res.json())
             .catch(ErrorHandler.handleError)
     }
 
     reviewsOfRestaurant(id: string): Observable<any> {
 
-        return this._http.get(`${MEAT_API}/restaurant/${id}/reviews`)
+        return this._http.get(`https://meatapi.herokuapp.com/restaurant/${id}/reviews`)
             .map(res => res.json())
             .catch(ErrorHandler.handleError)
     }
 
     menuOfRestaurant(id: string): Observable<MenuItem[]> {
 
-        return this._http.get(`${MEAT_API}/restaurant/${id}/menu`)
+        return this._http.get(`https://meatapi.herokuapp.com/restaurant/${id}/menu`)
             .map(res => res.json())
             .catch(ErrorHandler.handleError)
     }

@@ -7,7 +7,6 @@ import { CartItem } from './../restaurant-detail/shopping-cart/cart-item.model';
 import { Order } from 'app/order/order.model';
 import { ShoppingCartService } from './../restaurant-detail/shopping-cart/shopping-cart.service';
 // import { MEAT_API } from './../app.api';
-const MEAT_API: string = `https://meatapi.herokuapp.com`
 
 @Injectable()
 export class OrderService {
@@ -51,7 +50,7 @@ export class OrderService {
 
         const headers = new Headers({'Content-type': 'application/json'})
 
-        return this._http.post(`${MEAT_API}/orders`,
+        return this._http.post(`https://meatapi.herokuapp.com/orders`,
             JSON.stringify(order),
             new RequestOptions({headers: headers}))
             .map(response => response.json())
